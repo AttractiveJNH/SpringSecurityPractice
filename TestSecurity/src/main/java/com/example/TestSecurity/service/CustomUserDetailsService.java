@@ -19,7 +19,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
        UserEntity userData =  userRepository.findByUsername(username);
        if(userData != null){
-           // 이름이 null이 아니라면,ㅡ
+           // 이름이 null이 아니라면 로그인을 진행한다.
            return new CustomUserDetails(userData);
        }
         return null;

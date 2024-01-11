@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+        lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,6 +9,7 @@
 <form action="/loginProc" method="post" name="loginForm">
     <input id="username" type="text" name="username" placeholder="id">
     <input id="password" type="password" name="password" placeholder="password">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
     <input type="submit" value="login">
 </form>
 </body>
